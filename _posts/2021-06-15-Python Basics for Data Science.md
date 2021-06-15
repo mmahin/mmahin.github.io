@@ -12,4 +12,8 @@ dtypes = {"header 1": 'type 1', "header 2": 'type 2',..., "header n": 'type 3'}
 # Path is the directory where the file is
 
 data = pd.read_csv(path, names=headers, dtype=dtypes)</br>
+
+# If your file has the headers in the first line, use this
+
+data = pd.read_csv(path, headers= 0, dtype=dtypes)</br>
 ```
