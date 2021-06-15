@@ -5,7 +5,7 @@
 headers = ["header 1", "header 2", ..., "header n"]
 
 # Data types are releated data types for the variables. Datatypes supported by 
-python https://www.w3schools.com/python/python_datatypes.asp
+#python https://www.w3schools.com/python/python_datatypes.asp
 
 dtypes = {"header 1": 'type 1', "header 2": 'type 2',..., "header n": 'type 3'}
 
