@@ -1,4 +1,6 @@
-# Handling categorical values
+## Handling categorical values
+
+### Dummy Variables
 
 When we are working with rigression models we need numerical values. So we need to convert the numeric values into some kind of number form. One method is one hot encoding. 
 In this method for every value in a categorical variable a new variable is created. The rows in the previous variable, where the value was present it will set 1 or else it will be 0. 
