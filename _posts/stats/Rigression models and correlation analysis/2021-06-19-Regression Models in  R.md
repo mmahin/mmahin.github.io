@@ -21,3 +21,22 @@ overnight roost sites to fly to their feeding areas. The data is given in Geese.
 4. Obtain the confidence intervals for β1.
 5. Is there correlation between the temperature and time in the Geese data set?
 ```
+
+### Initial
+Here we are predicting the effect of air temperature on the time that the ”lesser snow geese” leave their overnight roost sites to fly to their feeding areas. The prediction and plots are predicting time from the temperature. Data is available with the folder. 
+
+### Regression Plot
+
+From the regression plot it is apparent that there is a positive correlation between the air temperature and the departure time. With the increase of temperature, the departure time increases. There is an apparent linear relation between the air temperature and the departure time. 
+
+```r 
+my_data <- read.delim("Geese.txt",header = TRUE, sep = " ")
+
+plot(my_data$temp, my_data$time,col = "blue",main = "The effect of air temperature on the time  Regression",
+     abline(lm(my_data$time ~ my_data$temp)), cex = 1.3, pch = 16,
+     xlab = "Tempareture",
+     ylab = "Time")
+
+```
+
+![alt text](_posts/stats/Rigression models and correlation analysis/000003.png)
