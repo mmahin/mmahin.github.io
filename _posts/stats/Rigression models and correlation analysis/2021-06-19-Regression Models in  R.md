@@ -39,4 +39,24 @@ plot(my_data$temp, my_data$time,col = "blue",main = "The effect of air temperatu
 
 ```
 
-![alt text](https://github.com/mmahin/mmahin.github.io/blob/9953c336a5c6dcf746498084bc1e49cda28edd20/_posts/stats/Rigression%20models%20and%20correlation%20analysis/000003.png)
+![Regression Plot](https://github.com/mmahin/mmahin.github.io/blob/9953c336a5c6dcf746498084bc1e49cda28edd20/_posts/stats/Rigression%20models%20and%20correlation%20analysis/000003.png)
+
+## Judging the Regression Plot 
+
+Not all data sets are well suited for regression. We can always find if a data set is well suited for the regression or not by evaluting the quality of the residuals. Residuals are errors. Generally, when we draw regression lines within data points, most of the points do not fall on the line. Some data points fall above the line and some below the line. These errors are known as the residuals. So, residual is,
+
+Residual = Observed value – predicted value
+
+Following figure shows the residuals,
+```r 
+model <- lm(time ~ temp, data = my_data)
+
+model.diag.metrics <- augment(model)
+ggplot(model.diag.metrics, aes(temp, time )) +
+    geom_point() +
+    stat_smooth(method = lm, se = FALSE) +
+    geom_segment(aes(xend = temp , yend = .fitted), 
+                 color = "red", size = 0.3)
+
+```
+![Residuals](https://github.com/mmahin/mmahin.github.io/blob/9953c336a5c6dcf746498084bc1e49cda28edd20/_posts/stats/Rigression%20models%20and%20correlation%20analysis/000004.png)
