@@ -78,3 +78,14 @@ plot(model,1)
 ![Residual Plot](https://github.com/mmahin/mmahin.github.io/blob/704c520e78a0cda51e6d5cd008988a88876ce306/_posts/stats/Rigression%20models%20and%20correlation%20analysis/000005.png)
 
 In a good residual plot, data points need to be homegenously scattered both side of the regression line. It should not show any pattern. It also shows if there are outliers. In our above plot, we can see the residuals are having little variability and curvature, indicating their might be a little non-linearity in the plot. As the points seems almost spread evenly two side of the zero, so it does not seem to be huge issue.  Also, from the plot, it shows several outleiers at the middle and end of the plot [sample 30, 21 and 4].  
+
+### Standard Residual vs Fitted Plot
+
+It is a standard version of rsidual plot. It explains the same things as the residual plot except they are standardized and non-negative. Following figure shows a plot:
+
+![Standard Residual Plot](https://github.com/mmahin/mmahin.github.io/blob/a373f3f1987cd8ccdcfdb40ba2be3e1e7106a738/_posts/stats/Rigression%20models%20and%20correlation%20analysis/000006.png)
+
+From the Standard Residual vs Fitted Plot, we can verify the little lon-linearity and outliers discovered using  Residual vs Fitted Plot. Here we can see, the variability increases a little on the middle, but comparatively large at the end. Here we expected our red line to be flat, but it is not the case here. So, it shows a little trend at the end. So the errors are non-constant, which proves the presence of heteroscedasticity. Another words our dependent variable requires transformation for accurate prediction.
+
+
+
