@@ -59,4 +59,4 @@ ggplot(model.diag.metrics, aes(temp, time )) +
                  color = "red", size = 0.3)
 
 ```
-![Residuals](https://github.com/mmahin/mmahin.github.io/blob/9953c336a5c6dcf746498084bc1e49cda28edd20/_posts/stats/Rigression%20models%20and%20correlation%20analysis/000004.png)
+![Residuals](https://github.com/mmahin/mmahin.github.io/blob/5dd2eeef66d506a612bb53ad6dc7c38ef0362e6f/_posts/stats/Rigression%20models%20and%20correlation%20analysis/000004.png)
