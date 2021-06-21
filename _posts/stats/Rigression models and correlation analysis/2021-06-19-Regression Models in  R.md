@@ -60,3 +60,21 @@ ggplot(model.diag.metrics, aes(temp, time )) +
 
 ```
 ![Residuals](https://github.com/mmahin/mmahin.github.io/blob/5dd2eeef66d506a612bb53ad6dc7c38ef0362e6f/_posts/stats/Rigression%20models%20and%20correlation%20analysis/000004.png)
+
+To judge a data set for regression, we need to judge mainly three things:
+
+1. Heteroscedasticity : Points at widely varying distances from the line 
+2. Non-liniarity
+3. Outliers 
+
+Lets see a few plots useful for that.
+
+### Residual plot
+
+A residual plot has the Residual Values on the vertical axis; the horizontal axis displays the independent variable. Following figure shows a residual plot:
+```r 
+plot(model,1)
+```
+![Residual Plot](https://github.com/mmahin/mmahin.github.io/blob/704c520e78a0cda51e6d5cd008988a88876ce306/_posts/stats/Rigression%20models%20and%20correlation%20analysis/000005.png)
+
+In a good residual plot, data points need to be homegenously scattered both side of the regression line. It should not show any pattern. It also shows if there are outliers. In our above plot, we can see the residuals are having little variability and curvature, indicating their might be a little non-linearity in the plot. As the points seems almost spread evenly two side of the zero, so it does not seem to be huge issue.  Also, from the plot, it shows several outleiers at the middle and end of the plot [sample 30, 21 and 4].  
