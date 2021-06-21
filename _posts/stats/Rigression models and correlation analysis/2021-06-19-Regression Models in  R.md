@@ -39,4 +39,4 @@ plot(my_data$temp, my_data$time,col = "blue",main = "The effect of air temperatu
 
 ```
 
-![alt text](_posts/stats/Rigression models and correlation analysis/000003.png)
+![alt text](https://github.com/mmahin/mmahin.github.io/blob/9953c336a5c6dcf746498084bc1e49cda28edd20/_posts/stats/Rigression%20models%20and%20correlation%20analysis/000003.png)
