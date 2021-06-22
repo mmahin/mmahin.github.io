@@ -23,7 +23,7 @@ overnight roost sites to fly to their feeding areas. The data is given in Geese.
 ```
 
 ### Initial
-Here we are predicting the effect of air temperature on the time that the ”lesser snow geese” leave their overnight roost sites to fly to their feeding areas. The prediction and plots are predicting time from the temperature. Data is available with the folder. Dataset available here: https://github.com/mmahin/mmahin.github.io/blob/0015f89e508081408de2a6f30f2b3480c80c2daa/_posts/stats/Rigression%20models%20and%20correlation%20analysis/Geese.txt
+Here we are predicting the effect of air temperature on the time that the ”lesser snow geese” leave their overnight roost sites to fly to their feeding areas. The prediction and plots are predicting time from the temperature. Data is available with the folder. Dataset available here: https://github.com/mmahin/mmahin.github.io/blob/5e0c62a5336c59f6d6038e1e851d3bc276fbfa9c/_includes/Geese.txt
 
 ### Regression Plot
 
@@ -45,7 +45,7 @@ plot(my_data$temp, my_data$time,col = "blue",main = "The effect of air temperatu
 
 ```
 
-![Regression Plot](https://github.com/mmahin/mmahin.github.io/blob/9953c336a5c6dcf746498084bc1e49cda28edd20/_posts/stats/Rigression%20models%20and%20correlation%20analysis/000003.png)
+![Regression Plot](https://github.com/mmahin/mmahin.github.io/blob/5e0c62a5336c59f6d6038e1e851d3bc276fbfa9c/_includes/000003.png)
 
 ## Judging the Regression Plot 
 
@@ -65,7 +65,7 @@ ggplot(model.diag.metrics, aes(temp, time )) +
                  color = "red", size = 0.3)
 
 ```
-![Residuals](https://github.com/mmahin/mmahin.github.io/blob/5dd2eeef66d506a612bb53ad6dc7c38ef0362e6f/_posts/stats/Rigression%20models%20and%20correlation%20analysis/000004.png)
+![Residuals](https://github.com/mmahin/mmahin.github.io/blob/5e0c62a5336c59f6d6038e1e851d3bc276fbfa9c/_includes/000004.png)
 
 To judge a data set for regression, we need to judge mainly three things:
 
@@ -81,7 +81,7 @@ A residual plot has the Residual Values on the vertical axis; the horizontal axi
 ```r 
 plot(model,1)
 ```
-![Residual Plot](https://github.com/mmahin/mmahin.github.io/blob/704c520e78a0cda51e6d5cd008988a88876ce306/_posts/stats/Rigression%20models%20and%20correlation%20analysis/000005.png)
+![Residual Plot](https://github.com/mmahin/mmahin.github.io/blob/5e0c62a5336c59f6d6038e1e851d3bc276fbfa9c/_includes/000005.png)
 
 In a good residual plot, data points need to be homegenously scattered both side of the regression line. It should not show any pattern. It also shows if there are outliers. From the residual plot if we see high curvature, we can assume the points are not well separeble using linear line. In our above plot, we can see the residuals are having little variability and curvature, indicating their might be a little non-linearity in the plot. As the points seems almost spread evenly two side of the zero, so it does not seem to be huge issue.  Also, from the plot, it shows several outleiers at the middle and end of the plot [sample 30, 21 and 4].  
 
@@ -89,7 +89,7 @@ In a good residual plot, data points need to be homegenously scattered both side
 
 It is a standard version of rsidual plot. It explains the same things as the residual plot except they are standardized and non-negative. This plot is good for seeing equal variance or homoscedasticity. We do not want any pattern for our red line here. Pattern or slope with red line means problem. Following figure shows a plot:
 
-![Standard Residual Plot](https://github.com/mmahin/mmahin.github.io/blob/a373f3f1987cd8ccdcfdb40ba2be3e1e7106a738/_posts/stats/Rigression%20models%20and%20correlation%20analysis/000006.png)
+![Standard Residual Plot](https://github.com/mmahin/mmahin.github.io/blob/5e0c62a5336c59f6d6038e1e851d3bc276fbfa9c/_includes/000006.png)
 
 From the Standard Residual vs Fitted Plot, we can verify the little lon-linearity and outliers discovered using  Residual vs Fitted Plot. Here we can see, the variability increases a little on the middle, but comparatively large at the end. Here we expected our red line to be flat, but it is not the case here. So, it shows a little trend at the end. So the errors are non-constant, which proves the presence of heteroscedasticity. Another words our dependent variable requires transformation for accurate prediction.
 
@@ -103,7 +103,7 @@ plot(model, 2)
 ```
 From the Normal Q-Q Plot of residuals we can see the residuals are not fully normally distributed. There is a little deviation from the normality at the beginning and end of the plot.  We can also check normality using tests like Shapiro-Wilk, Anderson-Darling and Jarque-Bera tests, which will give us some quantative values. 
 
-![Q-Q Plot](https://github.com/mmahin/mmahin.github.io/blob/b2dafefe3ab2eb3ff2401e3097df63165015e14f/_posts/stats/Rigression%20models%20and%20correlation%20analysis/000007.png)
+![Q-Q Plot](https://github.com/mmahin/mmahin.github.io/blob/5e0c62a5336c59f6d6038e1e851d3bc276fbfa9c/_includes/000007.png)
 
 ### Standard Residual vs Leverage Plot and Cook Distance
 
@@ -115,7 +115,7 @@ plot(model, 4)
 # Residuals vs Leverage
 plot(model, 5)
 ```
-![Q-Q Plot](https://github.com/mmahin/mmahin.github.io/blob/03e7bb4d3e5fc642aefdff99b52d2880533a6599/_posts/stats/Rigression%20models%20and%20correlation%20analysis/000008.png)
+![Q-Q Plot](https://github.com/mmahin/mmahin.github.io/blob/5e0c62a5336c59f6d6038e1e851d3bc276fbfa9c/_includes/000008.png)
 From the cook distance we can see the most influential points for our model. We can see sample 4,12 and 21 are most influential. But there are some more influential points present. 
 
 From the Standard Residual vs Leverage Plot, we can see the leverage of sample quite spread. That means the samples themselves do not have quite a dense zone. Also the influence of points are also quite spread. And some sample like 4 has high leverage and high influence. 
