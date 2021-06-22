@@ -23,7 +23,7 @@ overnight roost sites to fly to their feeding areas. The data is given in Geese.
 ```
 
 ### Initial
-Here we are predicting the effect of air temperature on the time that the ”lesser snow geese” leave their overnight roost sites to fly to their feeding areas. The prediction and plots are predicting time from the temperature. Data is available with the folder. 
+Here we are predicting the effect of air temperature on the time that the ”lesser snow geese” leave their overnight roost sites to fly to their feeding areas. The prediction and plots are predicting time from the temperature. Data is available with the folder. Dataset available here: https://github.com/mmahin/mmahin.github.io/blob/0015f89e508081408de2a6f30f2b3480c80c2daa/_posts/stats/Rigression%20models%20and%20correlation%20analysis/Geese.txt
 
 ### Regression Plot
 
@@ -113,3 +113,27 @@ plot(model, 5)
 From the cook distance we can see the most influential points for our model. We can see sample 4,12 and 21 are most influential. But there are some more influential points present. 
 
 From the Standard Residual vs Leverage Plot, we can see the leverage of sample quite spread. That means the samples themselves do not have quite a dense zone. Also the influence of points are also quite spread. And some sample like 4 has high leverage and high influence. 
+
+## Regression Equation 
+
+Finally we can get our regression equation using the following way:
+
+### Coefficients
+```r
+coefs = coefficients(model)
+coefs[1]
+coefs[2]
+```
+
+### Prediction Equation
+```r
+temp = 30
+time = coefs[1] + coefs[2]*temp
+```
+
+### Confidence Interval for any Prediction
+```r
+newdata = data.frame(temp = 30) 
+predict(model, newdata, interval="confidence")
+
+```
