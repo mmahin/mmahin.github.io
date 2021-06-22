@@ -77,15 +77,39 @@ plot(model,1)
 ```
 ![Residual Plot](https://github.com/mmahin/mmahin.github.io/blob/704c520e78a0cda51e6d5cd008988a88876ce306/_posts/stats/Rigression%20models%20and%20correlation%20analysis/000005.png)
 
-In a good residual plot, data points need to be homegenously scattered both side of the regression line. It should not show any pattern. It also shows if there are outliers. In our above plot, we can see the residuals are having little variability and curvature, indicating their might be a little non-linearity in the plot. As the points seems almost spread evenly two side of the zero, so it does not seem to be huge issue.  Also, from the plot, it shows several outleiers at the middle and end of the plot [sample 30, 21 and 4].  
+In a good residual plot, data points need to be homegenously scattered both side of the regression line. It should not show any pattern. It also shows if there are outliers. From the residual plot if we see high curvature, we can assume the points are not well separeble using linear line. In our above plot, we can see the residuals are having little variability and curvature, indicating their might be a little non-linearity in the plot. As the points seems almost spread evenly two side of the zero, so it does not seem to be huge issue.  Also, from the plot, it shows several outleiers at the middle and end of the plot [sample 30, 21 and 4].  
 
 ### Standard Residual vs Fitted Plot
 
-It is a standard version of rsidual plot. It explains the same things as the residual plot except they are standardized and non-negative. Following figure shows a plot:
+It is a standard version of rsidual plot. It explains the same things as the residual plot except they are standardized and non-negative. This plot is good for seeing equal variance or homoscedasticity. We do not want any pattern for our red line here. Pattern or slope with red line means problem. Following figure shows a plot:
 
 ![Standard Residual Plot](https://github.com/mmahin/mmahin.github.io/blob/a373f3f1987cd8ccdcfdb40ba2be3e1e7106a738/_posts/stats/Rigression%20models%20and%20correlation%20analysis/000006.png)
 
 From the Standard Residual vs Fitted Plot, we can verify the little lon-linearity and outliers discovered using  Residual vs Fitted Plot. Here we can see, the variability increases a little on the middle, but comparatively large at the end. Here we expected our red line to be flat, but it is not the case here. So, it shows a little trend at the end. So the errors are non-constant, which proves the presence of heteroscedasticity. Another words our dependent variable requires transformation for accurate prediction.
 
 
+### Normal Q-Q plot
 
+Normal Q-Q plot is another plot to understand the normality of the risiduals. If residuals are normally distributed, they fall on the straight line. It is important to check for this normality if we want to do any kind of testing like significance test that assumes normal distribution of the data. In those places, we want residuals are at least close to normal or should not deviates too much from the normal. If the residual deviates too much from the normal, we should go for regression and testings that do not assumes normality like robust regression . Normal Q-Q plot for our data given below:
+
+```r 
+plot(model, 2)
+```
+From the Normal Q-Q Plot of residuals we can see the residuals are not fully normally distributed. There is a little deviation from the normality at the beginning and end of the plot.  We can also check normality using tests like Shapiro-Wilk, Anderson-Darling and Jarque-Bera tests, which will give us some quantative values. 
+
+![Q-Q Plot](https://github.com/mmahin/mmahin.github.io/blob/b2dafefe3ab2eb3ff2401e3097df63165015e14f/_posts/stats/Rigression%20models%20and%20correlation%20analysis/000007.png)
+
+### Standard Residual vs Leverage Plot and Cook Distance
+
+Standard Residual vs Leverage Plot is a good tool to check the data points those are extreame and influencial at the same time. High values does not mean a data point has strong influence on the regression. Using Standard Residual vs Leverage Plot with Cook distance we can easily identify the significant outlier points. Lets go with our example:
+```{r }
+par(mfrow = c(1, 2))
+# Cook's distance
+plot(model, 4)
+# Residuals vs Leverage
+plot(model, 5)
+```
+![Q-Q Plot](https://github.com/mmahin/mmahin.github.io/blob/03e7bb4d3e5fc642aefdff99b52d2880533a6599/_posts/stats/Rigression%20models%20and%20correlation%20analysis/000008.png)
+From the cook distance we can see the most influential points for our model. We can see sample 4,12 and 21 are most influential. But there are some more influential points present. 
+
+From the Standard Residual vs Leverage Plot, we can see the leverage of sample quite spread. That means the samples themselves do not have quite a dense zone. Also the influence of points are also quite spread. And some sample like 4 has high leverage and high influence. 
