@@ -28,6 +28,12 @@ Here we are predicting the effect of air temperature on the time that the ”les
 ### Regression Plot
 
 From the regression plot it is apparent that there is a positive correlation between the air temperature and the departure time. With the increase of temperature, the departure time increases. There is an apparent linear relation between the air temperature and the departure time. 
+Required packages:
+
+library(tidyverse)
+library(caret)
+library(broom)
+library(ggplot2)
 
 ```r 
 my_data <- read.delim("Geese.txt",header = TRUE, sep = " ")
