@@ -28,7 +28,7 @@ For example if the slope rises with increase of values of X, there is positive c
 ### Initial
 Here we are predicting the effect of air temperature on the time that the ”lesser snow geese” leave their overnight roost sites to fly to their feeding areas. 
 The prediction and plots are predicting time from the temperature. Data is available with the folder. 
-Dataset available here: https://github.com/mmahin/mmahin.github.io/blob/b52146c07c5d724b25d7f6b59a7c550d25001da2/_posts/Geese.txt
+Dataset available here: https://github.com/mmahin/mmahin.github.io/blob/2fc100056d5ba43785d0bf6b8d81eaa223ace6e5/assets/images/Analysis-of-Residuals-for-Regression-Model-in-R/Geese.txt
 
 ### Regression Plot
 
@@ -51,7 +51,7 @@ plot(my_data$temp, my_data$time,col = "blue",main = "The effect of air temperatu
 
 ```
 
-![Regression Plot](https://github.com/mmahin/mmahin.github.io/blob/b52146c07c5d724b25d7f6b59a7c550d25001da2/_posts/000003.png)
+![Regression Plot](/assets/images/Analysis-of-Residuals-for-Regression-Model-in-R/000003.png)
 
 ## Judging the Regression Plot 
 
@@ -72,7 +72,7 @@ ggplot(model.diag.metrics, aes(temp, time )) +
                  color = "red", size = 0.3)
 
 ```
-![Residuals](https://github.com/mmahin/mmahin.github.io/blob/b52146c07c5d724b25d7f6b59a7c550d25001da2/_posts/000004.png)
+![Residuals](/assets/images/Analysis-of-Residuals-for-Regression-Model-in-R/000004.png)
 
 To judge a data set for regression, we need to judge mainly three things:
 
@@ -88,7 +88,7 @@ A residual plot has the Residual Values on the vertical axis; the horizontal axi
 ```r 
 plot(model,1)
 ```
-![Residual Plot](https://github.com/mmahin/mmahin.github.io/blob/b52146c07c5d724b25d7f6b59a7c550d25001da2/_posts/000005.png)
+![Residual Plot](/assets/images/Analysis-of-Residuals-for-Regression-Model-in-R/000005.png)
 
 In a good residual plot, data points need to be homegenously scattered both side of the regression line. It should not show any pattern. It also shows if there are outliers. 
 From the residual plot if we see high curvature, we can assume the points are not well separeble using linear line. In our above plot, we can see the residuals are having little 
@@ -100,7 +100,7 @@ huge issue.  Also, from the plot, it shows several outleiers at the middle and e
 It is a standard version of rsidual plot. It explains the same things as the residual plot except they are standardized and non-negative. This plot is good for seeing equal 
 variance or homoscedasticity. We do not want any pattern for our red line here. Pattern or slope with red line means problem. Following figure shows a plot:
 
-![Standard Residual Plot](https://github.com/mmahin/mmahin.github.io/blob/b52146c07c5d724b25d7f6b59a7c550d25001da2/_posts/000006.png)
+![Standard Residual Plot](/assets/images/Analysis-of-Residuals-for-Regression-Model-in-R/000006.png)
 
 From the Standard Residual vs Fitted Plot, we can verify the little lon-linearity and outliers discovered using  Residual vs Fitted Plot. Here we can see, the variability increases 
 a little on the middle, but comparatively large at the end. Here we expected our red line to be flat, but it is not the case here. So, it shows a little trend at the end.
@@ -120,7 +120,7 @@ plot(model, 2)
 From the Normal Q-Q Plot of residuals we can see the residuals are not fully normally distributed. There is a little deviation from the normality at the beginning and end of the plot.
 We can also check normality using tests like Shapiro-Wilk, Anderson-Darling and Jarque-Bera tests, which will give us some quantative values. 
 
-![Q-Q Plot](https://github.com/mmahin/mmahin.github.io/blob/b52146c07c5d724b25d7f6b59a7c550d25001da2/_posts/000007.png)
+![Q-Q Plot](/assets/images/Analysis-of-Residuals-for-Regression-Model-in-R/000007.png)
 
 ### Standard Residual vs Leverage Plot and Cook Distance
 
@@ -134,7 +134,7 @@ plot(model, 4)
 # Residuals vs Leverage
 plot(model, 5)
 ```
-![Q-Q Plot](https://github.com/mmahin/mmahin.github.io/blob/b52146c07c5d724b25d7f6b59a7c550d25001da2/_posts/000008.png)
+![Q-Q Plot](/assets/images/Analysis-of-Residuals-for-Regression-Model-in-R/000008.png)
 From the cook distance we can see the most influential points for our model. We can see sample 4,12 and 21 are most influential. But there are some more influential points present. 
 
 From the Standard Residual vs Leverage Plot, we can see the leverage of sample quite spread. That means the samples themselves do not have quite a dense zone. Also the influence of 
